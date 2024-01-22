@@ -2,9 +2,8 @@
 <br>
 <img src="https://drive.google.com/uc?export=view&id=1P5tc95ACf-MK6YwklRQ9OgMvhizICuoe" width="1000">
 <br>
+Repositório contendo os arquivos .PY/Flask e Dockerfile para a construção da imagem do container Docker e o envio para o Registry da Digital Ocean. Esta aplicação é de minha autoria e retorna o hostname do pod. Realiza auto-refresh a cada dois segundos, o que será muito útil para futuras implantações em clusters Kubernetes. Para uso local, com docker run/exec em um pod, o auto-refresh ajuda a notar a aplicação saudável e responsiva.
 
-Repositório contendo os arquivos .PY/Flask e Dockerfile, para build da imagem do container Docker e push para o Registry da Digital Ocean. Essa aplicação é de minha autoria e a mesma retorna o hostname do pod. Ela faz autorefresh a cada dois segundos e isso será muito útil para implantações em cluster kubernetes futuros. Para utilização local, com docker run/exec e um pod, o auto refresh ajuda apenas para você notar a aplicação saudável e responsiva.
-
-Observe o aquivo .SH na raiz do projeto, ele pode ser útil para você, minimizando o uso de comandos no terminal. Lembre-se de ajustá-lo conforme seu ambiente e necessidade.
+Observe o arquivo .SH na raiz do projeto; ele pode ser útil para você, minimizando o uso de comandos no terminal. Lembre-se de ajustá-lo conforme seu ambiente e necessidade.
 
 <br><br>Bem, por enquanto, é isso pessoal :)
