@@ -1,26 +1,45 @@
 #!/bin/bash
 
-# Função para exibir mensagens
-exibir_mensagem() {
-    echo -e "\033[1m$1\033[0m"  # Exibir a mensagem em negrito
+negrito() {
+    echo -e "\033[1m$1\033[0m"
 }
 
-# Passo 1: Construir a imagem Docker...
-exibir_mensagem "Passo 1: Construindo a imagem Docker..."
-docker build -t registry.digitalocean.com/<NOME_UNICO_DO_SEU_REGISTRY>/<NOME_DA_APLICACAO>:<TAG_DA_APLICACAO> . | tee />
+echo " "
+negrito "Passo 1: Construindo a imagem Docker..."
+echo " "
+sleep 3
+docker build -t registry.digitalocean.com/dellabeneta/webapp:latest .
 
-# Passo 2: Autenticar na Digital Ocean com seu Token de acesso pessoal e definir como padrão para uso na CLI...
-exibir_mensagem "Passo 2: Autenticando na Digital Ocean..."
-doctl auth init --context <NOME_DO_CONTEXTO> && doctl auth switch --context <NOME_DO_CONTEXTO> | tee /dev/tty
+echo " "
+negrito "Passo 2: Autenticando na Digital Ocean..."
+echo " "
+sleep 3
+doctl auth init --context dellabeneta && doctl auth switch --context dellabeneta
 
-# Passo 3: Fazer login no registro da DigitalOcean (apenas esse comando simples, você já autenticou no passo acima)...
-exibir_mensagem "Passo 3: Fazendo login no registro da DigitalOcean..."
-doctl registry login | tee /dev/tty
+echo " "
+negrito "Passo 3: Fazendo login no Registry da DigitalOcean..."
+sleep 2
+echo " "
+doctl registry login
 
-# Passo 4: Fazer o push da imagem para o seu Registry da Digital Ocean...
-exibir_mensagem "Passo 4: Fazendo push da imagem para o seu Registry na Digital Ocean..."
-docker push registry.digitalocean.com/<NOME_UNICO_DO_SEU_REGISTRY>/<NOME_DA_APLICACAO>:<TAG_DA_APLICACAO> | tee /dev/tty
+echo " "
+negrito "Passo 4: Fazendo push da imagem para o Registry..."
+sleep 3
+echo " "
+docker push registry.digitalocean.com/dellabeneta/webapp:latest
 
-# Passo 5: Faz a limpeza local de todo sistema Docker (containers, imagens, redes...). Descomente se quiser usar.
-# exibir_mensagem "Passo 5: Limpando o sistema Docker local..."
-# docker system prune -f --all | tee /dev/tty
+## O comando docker system prune -f --all é usado para limpar recursos 
+## não utilizados no Docker, como contêineres, redes, volumes e imagens
+## sem uso. Este comando remove esses recursos de forma segura, ajudando
+## a liberar espaço no sistema. Se desejar utilizar, basta remover ou
+## comentar com '#' as linhas 37 e 45.
+
+: '
+echo " "
+negrito "Passo 5: Limpando os caches locais do Docker..."
+sleep 3 
+echo " "
+docker system prune -f --all
+echo "Processo finalizado com sucesso!"
+sleep 4
+'
