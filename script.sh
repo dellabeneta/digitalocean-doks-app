@@ -8,13 +8,13 @@ echo " "
 negrito "Passo 1: Construindo a imagem Docker..."
 echo " "
 sleep 3
-docker build -t registry.digitalocean.com/dellabeneta/webapp:latest .
+docker build -t registry.digitalocean.com/XXX/YYY:ZZZ .
 
 echo " "
 negrito "Passo 2: Autenticando na Digital Ocean..."
 echo " "
 sleep 3
-doctl auth init --context dellabeneta && doctl auth switch --context dellabeneta
+doctl auth init --context XXX && doctl auth switch --context XXX
 
 echo " "
 negrito "Passo 3: Fazendo login no Registry da DigitalOcean..."
@@ -26,7 +26,7 @@ echo " "
 negrito "Passo 4: Fazendo push da imagem para o Registry..."
 sleep 3
 echo " "
-docker push registry.digitalocean.com/dellabeneta/webapp:latest
+docker push registry.digitalocean.com/XXX/YYY:ZZZ
 
 ## O comando docker system prune -f --all é usado para limpar recursos 
 ## não utilizados no Docker, como contêineres, redes, volumes e imagens
