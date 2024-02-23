@@ -1,5 +1,5 @@
 ## K8S-Project | DOCKER e WEBAPP.PY para build
-Faz parte da playlist: https://youtube.com/playlist?list=PLXV200dpiF4UFLIPNe9JNARiEAnfjOKZ8&si=gQAQr4tFqVOYbSiG
+Playlist: https://youtube.com/playlist?list=PLXV200dpiF4UFLIPNe9JNARiEAnfjOKZ8&si=gQAQr4tFqVOYbSiG
 <br>
 <img src="https://drive.google.com/uc?export=view&id=1PBm4Y0Ou3Pbe3Ce12dTb63dbKXgAKhnQ" width="1000">
 <br>
